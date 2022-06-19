@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("background.jpg") no-repeat center / cover;
+    filter: contrast(.70);
+}
+
+main > figure {
+    color: #000000;
+}
+
+main > figure > blockquote {
+    text-align: center;
+    font-size: calc(1.2rem + 1.2vw);
+}
+
+main > figure > blockquote > p::before {
+    content: "『 ";
+}
+
+main > figure > blockquote > p {
+    font-weight: normal;
+}
+
+main > figure > blockquote > p::after {
+    content: " 』";
+}
+
+main > figure > figcaption::before {
+    content: "—— ";
+}
+
+main > figure > figcaption {
+    text-align: right;
+    font-size: calc(0.8rem + 0.7vw);
+}
+
+main > figure > figcaption > cite::before {
+    content: "《 ";
+}
+
+main > figure > figcaption > cite::after {
+    content: " 》";
+}
+
+
