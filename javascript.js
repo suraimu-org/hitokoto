@@ -1,28 +1,26 @@
 function hitokoto() {
-    fetch("https://v1.hitokoto.cn/")
+
+    fetch("https://hitokoto.suraimu.org/", {
+        headers: {
+            "accept": "application/json"
+        }
+    })
         .then(function (response) {
             return response.json();
+
         })
         .then(function (json) {
-
             let content = document.querySelector("main > figure > blockquote > p");
-
-            content.textContent = json.hitokoto;
-
+            content.textContent = json.content;
             let figcaption = document.querySelector("main > figure > figcaption");
-
-            figcaption.textContent = json.from_who;
-
+            figcaption.textContent = json.author;
             let cite = document.createElement("cite");
-            cite.innerText = json.from;
+            cite.innerText = json.artwork;
             figcaption.appendChild(cite)
-
-            console.log(json);
         });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
     hitokoto();
     setInterval(hitokoto, 10e3);
-    console.log('DOMContentLoaded 2 seconds passed');
 });
