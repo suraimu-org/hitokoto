@@ -1,6 +1,7 @@
 function hitokoto() {
 
-    fetch("https://hitokoto.suraimu.org/", {
+    // 避免被缓存
+    fetch("https://hitokoto.suraimu.org/" + new Date().getTime(), {
         headers: {
             "accept": "application/json"
         }
